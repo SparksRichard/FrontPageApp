@@ -31,8 +31,8 @@
       <ion-content>
         <ion-list>
           <ion-item ng-repeat="x in posts">
-            <div ng-bind="x.title">
-            {{x.title}}
+            <div ng-bind-html="x.title">
+            
             </div>
           </ion-item>
         </ion-list>

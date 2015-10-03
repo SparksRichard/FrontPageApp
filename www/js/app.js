@@ -85,19 +85,19 @@ redditApp.updateThumbnail = function(x) {
 
     switch (this.linkManager[x].thumbnail) {
       case "nsfw":
-        pic = "http://i.imgur.com/UHzw6.png";
+        pic = '"http://i.imgur.com/UHzw6.png"';
         break;
       case "":
-        pic = "https://lh3.googleusercontent.com/-I7VHiw7eMcM/AAAAAAAAAAI/AAAAAAAAAAA/v9t8aXluKrs/photo.jpg"
+        pic = '"https://lh3.googleusercontent.com/-I7VHiw7eMcM/AAAAAAAAAAI/AAAAAAAAAAA/v9t8aXluKrs/photo.jpg"';
         break;
       case "self":
-        pic = "http://i.imgur.com/Obq6XD6.png"
+        pic = '"http://i.imgur.com/Obq6XD6.png"';
         break;
       case "default":
-        pic = "http://i.stack.imgur.com/kL2G9.png";
+        pic = '"http://i.stack.imgur.com/kL2G9.png"';
         break;
       default:
-        pic = "http://i.imgur.com/vMScC.gif";
+        pic = '"http://i.imgur.com/vMScC.gif"';
         //pic = this.linkManager[x].thumbnail;
     }
   }
@@ -113,12 +113,12 @@ redditApp.writeToScreen = function() {
   for (x in this.linkManager) {
     var title = "";
     //fixes some formatting
-    comments = "http://www.reddit.com" + redditApp.linkManager[x].permalink;
+    comments = '"http://www.reddit.com' + redditApp.linkManager[x].permalink+'"';
     redditApp.updateThumbnail(x);
     //creates a hyperlink of the given thumbnail
-    title += "<article class = \"group\"><a class = \"picture\" href = " + this.linkManager[x].url + "><img class = \"thumbnail\" src = " + pic + "alt = \"broken!!\" height = \"100\" width = \"100\"></a>";
+    title += '<article class = \"group\"><a class = \"picture\" href = "' + this.linkManager[x].url + '"><img class = \"thumbnail\" src = ' + pic + " alt = \"broken!!\" height = \"100\" width = \"100\"></a>";
     //creates a link for the title, a link for the comments (that includes the number of comments) and whether or not the link is NSFW
-    title += "<ul class = \"titleLink\" style = \"list-style-type:none\"><li><a class = \"titleFormat\" href = " + this.linkManager[x].url + ">" + this.linkManager[x].title + "</a></li><li><a class = \"commentFormat\" href = " + comments + ">Click here to view " + this.linkManager[x].num_comments + " comments.</a></li><li class=\"notSafe\">" + redditApp.checkForNSFW(x) + "</li></ul>";
+    title += '<ul class = \"titleLink\" style = \"list-style-type:none\"><li><a class = \"titleFormat\" href = "' + this.linkManager[x].url + '" >' + this.linkManager[x].title + "</a></li><li><a class = \"commentFormat\" href = " + comments + ">Click here to view " + this.linkManager[x].num_comments + " comments.</a></li><li class=\"notSafe\">" + redditApp.checkForNSFW(x) + "</li></ul>";
     //makes a list of Score, Subreddit, and Author of the article
     title += "<ul class = \"infoList\">"
     title += "<li>Points:" + this.linkManager[x].score + "</li> ";
