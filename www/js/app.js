@@ -3,10 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('FrontPage', ['ionic','ngSanitize'])
+angular.module('FrontPage', ['ionic'])
 
 
-.controller('FrontPageCtrl', function($scope, $sce, $sanitize) {
+.controller('FrontPageCtrl', ['$scope',function($scope) {
 
 var redditApp = new Object();
 redditApp.linkManager = [];
@@ -142,12 +142,12 @@ request.onreadystatechange = function() {
     parsedRequest = JSON.parse(request.responseText);
     redditApp.buildObjects();
     redditApp.writeToScreen();
-    console.log($scope.posts[8].title);
+    console.log($scope.posts);
   }
 }
 request.send();
 
-})
+}])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

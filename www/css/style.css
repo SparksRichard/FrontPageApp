@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-body { font: 8px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
+body { font: 14px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
 
 article, aside, figure, footer, header, nav, section { display: block; }
 
@@ -116,7 +116,7 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 section {
     opacity: .9;
     background-color:#ccc;
-    padding: 9px;
+    padding: 15px;
 }
 article{
     border-bottom: 1px solid #999;
@@ -153,7 +153,7 @@ article{
 
 .titleLink{
     float: left;
-    width:60%;
+    width:65%;
   
 }
 .commentFormat{
@@ -162,14 +162,13 @@ article{
 .titleFormat{
     padding-bottom: 15px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 19px;
 }
 
 .infoList {
     float: right;
     width: 20%;
-    padding-bottom: 7px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #999;
 }
-
 
