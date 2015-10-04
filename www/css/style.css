@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-body { font: 14px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
+body { font: 8px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
 
 article, aside, figure, footer, header, nav, section { display: block; }
 
@@ -116,7 +116,7 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 section {
     opacity: .9;
     background-color:#ccc;
-    padding: 15px;
+    padding: 9px;
 }
 article{
     border-bottom: 1px solid #999;
@@ -162,13 +162,13 @@ article{
 .titleFormat{
     padding-bottom: 15px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 13px;
 }
 
 .infoList {
     float: right;
     width: 20%;
-    padding-bottom: 15px;
+    padding-bottom: 11px;
     border-bottom: 1px solid #999;
 }
 
