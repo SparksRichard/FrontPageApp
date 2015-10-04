@@ -107,7 +107,7 @@ redditApp.updateThumbnail = function(x) {
    */
   
    var comments = "";
-  
+var title = '';
 redditApp.writeToScreen = function() {
  $scope.posts = [];
   for (x in this.linkManager) {
