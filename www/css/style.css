@@ -10,7 +10,7 @@
     padding: 0;
 }
 
-body { font: 14px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
+body { font: 8px/1.4 arial, sans-serif; background-color: #F5F5F5;);}
 
 article, aside, figure, footer, header, nav, section { display: block; }
 
@@ -116,15 +116,15 @@ ul li {margin-left: 20px; margin-bottom: 0;}
 section {
     opacity: .9;
     background-color:#ccc;
-    padding: 15px;
+    padding: 2px;
 }
 article{
     border-bottom: 1px solid #999;
 }
 #title ul{
     
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 .picture img {
@@ -147,7 +147,7 @@ article{
 }
 
 .title2 a{
-    padding-bottom: 15px;
+    padding-bottom: 2px;
     border-bottom: 1px solid #999;
 }
 
@@ -160,15 +160,16 @@ article{
     color:#060;
 }
 .titleFormat{
-    padding-bottom: 15px;
+    padding-bottom: 4px;
     text-decoration: none;
     font-size: 19px;
 }
 
 .infoList {
+    font-size: 12px;
     float: right;
     width: 20%;
-    padding-bottom: 15px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #999;
 }
 

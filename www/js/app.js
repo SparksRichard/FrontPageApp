@@ -6,7 +6,7 @@
 angular.module('FrontPage', ['ionic'])
 
 
-.controller('FrontPageCtrl', ['$scope',function($scope) {
+.controller('FrontPageCtrl', function($scope, $http) {
 
 var redditApp = new Object();
 redditApp.linkManager = [];
@@ -15,6 +15,17 @@ var parsedRequest;
 var comments = "";
 var pic = "";
 var titleLink;
+
+$http.get("http://www.reddit.com/.json")
+  .success(function(request) {
+  
+    $scope.rawData = request;
+    redditApp.buildObjects();
+    redditApp.writeToScreen();
+    console.log($scope.posts);
+    console.log($scope.rawData);
+  
+ })
 
 /**
  * Constructor for each reddit link. Includes link to post and comments, name of the author, score of the post, whether it is NSFW, and what subreddit it was posted to
@@ -45,7 +56,7 @@ function Link(author, num_comments, over_18, permalink, score, subreddit, thumbn
  * builds an array of 25 objects that contain the imported data from reddit
  */
 redditApp.buildObjects = function() {
-  var redditData = parsedRequest.data.children
+  var redditData = $scope.rawData.data.children
   var myLink;
   for (x in redditData) {
     myLink = new Link(
@@ -108,8 +119,9 @@ redditApp.updateThumbnail = function(x) {
   
    var comments = "";
 var title = '';
+
 redditApp.writeToScreen = function() {
- $scope.posts = [];
+ $scope.posts=[];
   for (x in this.linkManager) {
     var title = '';
     //fixes some formatting
@@ -127,16 +139,9 @@ redditApp.writeToScreen = function() {
 
     $scope.posts[x] = {title};
   }
-  
+
 }
-
-
-/**
- * Requests the JSON data from reddit.com.
- * recieves and parses data on top 25 posts at the time.
- * calls buildobjects and writeToScreen to extract data we want, format it to html, and push it to the webpage.
- */
-request.open('GET', 'http://www.reddit.com/.json');
+  /**request.open('GET', 'http://www.reddit.com/.json');
 request.onreadystatechange = function() {
   if ((request.status == 200) && (request.readyState == 4)) {
     parsedRequest = JSON.parse(request.responseText);
@@ -145,9 +150,23 @@ request.onreadystatechange = function() {
     console.log($scope.posts);
   }
 }
-request.send();
 
-}])
+request.send();*/
+
+
+
+
+
+
+/**
+ * Requests the JSON data from reddit.com.
+ * recieves and parses data on top 25 posts at the time.
+ * calls buildobjects and writeToScreen to extract data we want, format it to html, and push it to the webpage.
+ */
+
+
+
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
