@@ -153,23 +153,24 @@ article{
 
 .titleLink{
     float: left;
-    width:65%;
+    width:50%;
   
 }
 .commentFormat{
+    font-size: 10px;
     color:#060;
 }
 .titleFormat{
     padding-bottom: 4px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 14px;
 }
 
 .infoList {
     font-size: 12px;
     float: right;
     width: 20%;
-    padding-bottom: 4px;
+   
     border-bottom: 1px solid #999;
 }
 

@@ -128,14 +128,14 @@ redditApp.writeToScreen = function() {
     comments = '"http://www.reddit.com' + redditApp.linkManager[x].permalink+'"';
     redditApp.updateThumbnail(x);
     //creates a hyperlink of the given thumbnail
-    title += '<article class = \"group\"><a class = \"picture\" href = "' + this.linkManager[x].url + '"><img class = \"thumbnail\" src = ' + pic + " alt = \"broken!!\" height = \"50\" width = \"50\"></a>";
+    title += '<a class = \"picture\" href = "' + this.linkManager[x].url + '"><img class = \"thumbnail\" src = ' + pic + " alt = \"broken!!\" height = \"50\" width = \"50\"></a>";
     //creates a link for the title, a link for the comments (that includes the number of comments) and whether or not the link is NSFW
     title += '<ul class = \"titleLink\" style = \"list-style-type:none\"><li><a class = \"titleFormat\" href = "' + this.linkManager[x].url + '" >' + this.linkManager[x].title + "</a></li><li><a class = \"commentFormat\" href = " + comments + ">Click here to view " + this.linkManager[x].num_comments + " comments.</a></li><li class=\"notSafe\">" + redditApp.checkForNSFW(x) + "</li></ul>";
     //makes a list of Score, Subreddit, and Author of the article
     title += "<ul class = \"infoList\">"
     title += "<li>Points:" + this.linkManager[x].score + "</li> ";
     title += "<li>Sub:" + this.linkManager[x].subreddit + "</li> ";
-    title += "<li>By:" + this.linkManager[x].author + "</li></ul></article>";
+    title += "<li>By:" + this.linkManager[x].author + "</li></ul>";
 
     $scope.posts[x] = {title};
   }
