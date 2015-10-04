@@ -125,7 +125,7 @@ redditApp.writeToScreen = function() {
     title += "<li>Sub:" + this.linkManager[x].subreddit + "</li> ";
     title += "<li>By:" + this.linkManager[x].author + "</li></ul></article>";
 
-    $scope.posts[x] = $sanitize(title);
+    $scope.posts[x] = {title};
   }
   
 }
