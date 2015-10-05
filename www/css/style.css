@@ -99,13 +99,13 @@ article, aside, figure, footer, header, nav, section { display: block; }
 }
 
 /* page styles */
-article {margin: 5%;}
+
 article p { margin-bottom: 20px;}
 section {margin: 5%;}
 h1 {font-weight: bold;}
 ol {list-style-type: lower-alpha; margin-left:15px}
 ol li {margin-bottom: 15px;}
-ul li {margin-left: 20px; margin-bottom: 0;}
+ul li {margin-left: 10px; margin-bottom: 0;}
 #result {border: 1px #aaa solid; padding:10px; min-height: 30; background:#eee; margin-bottom: 15px;}
 
 
@@ -128,7 +128,8 @@ article{
 }
 
 .picture img {
-
+    width: 50px;
+    height: 50px;
     border: 1px solid #999;
     
 }
@@ -140,7 +141,6 @@ article{
 
 .titleLink li a{
 
-    
 }
 .notSafe{
     color:red;
@@ -152,25 +152,36 @@ article{
 }
 
 .titleLink{
+    
     float: left;
-    width:50%;
+    width:60%;
+
   
 }
 .commentFormat{
     font-size: 10px;
-    color:#060;
+    color:#061;
 }
 .titleFormat{
-    padding-bottom: 4px;
-    text-decoration: none;
-    font-size: 14px;
-}
+    
+    white-space: normal;
 
-.infoList {
+    text-decoration: none;
     font-size: 12px;
+}
+.paragraph{
+    line-height: 12px;
+}
+.infoList {
+
+    font-size: 8px;
     float: right;
-    width: 20%;
-   
+    width: 22%;
     border-bottom: 1px solid #999;
 }
+.infoList li{
+     margin-left: 0px; 
+}
+
+
 
