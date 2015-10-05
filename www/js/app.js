@@ -103,16 +103,16 @@ angular.module('FrontPage', ['ionic'])
 
       switch (this.linkManager[x].thumbnail) {
         case "nsfw":
-          pic = '"http://i.imgur.com/UHzw6.png"';
+          pic = 'http://i.imgur.com/UHzw6.png';
           break;
         case "":
-          pic = '"http://i.imgur.com/vMScC.gif"';
+          pic = 'http://i.imgur.com/vMScC.gif';
           break;
         case "self":
-          pic = '"https://lh3.googleusercontent.com/-I7VHiw7eMcM/AAAAAAAAAAI/AAAAAAAAAAA/v9t8aXluKrs/photo.jpg"';
+          pic = 'https://lh3.googleusercontent.com/-I7VHiw7eMcM/AAAAAAAAAAI/AAAAAAAAAAA/v9t8aXluKrs/photo.jpg';
           break;
         case "default":
-          pic = '"http://i.stack.imgur.com/kL2G9.png"';
+          pic = 'http://i.stack.imgur.com/kL2G9.png';
           break;
         default:
           pic = this.linkManager[x].thumbnail;
@@ -130,17 +130,17 @@ angular.module('FrontPage', ['ionic'])
     for (x in this.linkManager) {
       var title = '';
       //fixes some formatting
-      comments = '"http://www.reddit.com' + redditApp.linkManager[x].permalink + '"';
+      comments = 'http://www.reddit.com' + redditApp.linkManager[x].permalink;
       redditApp.updateThumbnail(x);
       //creates a hyperlink of the given thumbnail
-      title += '<a class = \"picture\" href = "' + this.linkManager[x].url + '"><img class = \"thumbnail\" src = ' + pic + " alt = \"broken!!\" ></a>";
+      title += '<a class = "picture" href = "' + this.linkManager[x].url + '"><img class = "thumbnail" src = "' + pic + '" alt = "broken!!" ></a>';
       //creates a link for the title, a link for the comments (that includes the number of comments) and whether or not the link is NSFW
-      title += '<ul class = \"titleLink\" style = \"list-style-type:none\"><li><p class="paragraph"><a class = \"titleFormat\" href = "' + this.linkManager[x].url + '" >' + this.linkManager[x].title + "</a></p></li><li><a class = \"commentFormat\" href = " + comments + ">Click here to view " + this.linkManager[x].num_comments + " comments.</a></li><li class=\"notSafe\">" + redditApp.checkForNSFW(x) + "</li></ul>";
+      title += '<ul class = "titleLink" style = "list-style-type:none"><li><p class="paragraph"><a class = "titleFormat" href = "' + this.linkManager[x].url + '" >' + this.linkManager[x].title + '</a></p></li><li><a class = "commentFormat" href = "' + comments + '">Click here to view ' + this.linkManager[x].num_comments + ' comments.</a></li><li class="notSafe">' + redditApp.checkForNSFW(x) + '</li></ul>';
       //makes a list of Score, Subreddit, and Author of the article
-      title += "<ul class = \"infoList\">"
-      title += "<li>Points:" + this.linkManager[x].score + "</li> ";
-      title += "<li>Sub:" + this.linkManager[x].subreddit + "</li> ";
-      title += "<li>By:" + this.linkManager[x].author + "</li></ul>";
+      title += '<ul class = "infoList">';
+      title += '<li>Points:' + this.linkManager[x].score + '</li>';
+      title += '<li>Sub:' + this.linkManager[x].subreddit + '</li>';
+      title += '<li>By:' + this.linkManager[x].author + '</li></ul>';
 
       $scope.posts[x] = {
         title
