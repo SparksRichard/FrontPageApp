@@ -16,6 +16,13 @@ var comments = "";
 var pic = "";
 var titleLink;
 
+/**
+ * Requests the JSON data from reddit.com.
+ * recieves and parses data on top 25 posts at the time.
+ * calls buildobjects and writeToScreen to extract data we want, format it to html, and push it to the webpage.
+ */
+
+
 $http.get("http://www.reddit.com/.json")
   .success(function(request) {
   
@@ -141,30 +148,6 @@ redditApp.writeToScreen = function() {
   }
 
 }
-  /**request.open('GET', 'http://www.reddit.com/.json');
-request.onreadystatechange = function() {
-  if ((request.status == 200) && (request.readyState == 4)) {
-    parsedRequest = JSON.parse(request.responseText);
-    redditApp.buildObjects();
-    redditApp.writeToScreen();
-    console.log($scope.posts);
-  }
-}
-
-request.send();*/
-
-
-
-
-
-
-/**
- * Requests the JSON data from reddit.com.
- * recieves and parses data on top 25 posts at the time.
- * calls buildobjects and writeToScreen to extract data we want, format it to html, and push it to the webpage.
- */
-
-
 
 })
 
