@@ -141,7 +141,6 @@ angular.module('FrontPage', ['ionic'])
       title += '<li>Points:' + this.linkManager[x].score + '</li>';
       title += '<li>Sub:' + this.linkManager[x].subreddit + '</li>';
       title += '<li>By:' + this.linkManager[x].author + '</li></ul>';
-
       $scope.posts[x] = {
         title
       };
